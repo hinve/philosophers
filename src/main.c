@@ -1,16 +1,19 @@
-# include "philo.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hpino-mo <hpino-mo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/10 14:01:25 by hpino-mo          #+#    #+#             */
+/*   Updated: 2024/09/10 16:15:58 by hpino-mo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(int argc, char **argv)
+#include "philo.h"
+
+int	main(int argc, char **argv) // argv == ./philo 5 810 200 200 [5]
 {
-    (void)argv;
-    if(argc == 5 || argc == 6)
-    {
-        
-    }
-    else
-    {
-        write_error("Wrong number of arguments");
-        return (1);
-    }
-    return (0);
+	if ((argc == 5 || argc == 6) && valid_arguments(argv))
+        philo(argv);
 }
