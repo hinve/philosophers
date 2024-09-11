@@ -2,7 +2,6 @@
 # define PHILO_H
 
 // COLORS
-
 # define RST "\033[0m"    /* Reset to default color */
 # define RED "\033[1;31m" /* Bold Red */
 # define G "\033[1;32m"   /* Bold Green */
@@ -13,7 +12,6 @@
 # define W "\033[1;37m"   /* Bold White */
 
 // INCLUDES
-
 # include <pthread.h>  // mutex: init destroy lock unlock
 # include <stdio.h>    // printf
 # include <stdlib.h>   // malloc free
@@ -60,17 +58,16 @@ typedef struct s_philo
 
 
 // PROTOTYPES //
-
-// write_errors.c
+// writes.c
 void				write_error(char *str);
 void				print_status(t_philo *philo, char *str);
 
 // utils.c
 int					ft_atoi(const char *str);
 int					valid_arguments(char **argv);
-int					only_n(char **argv);
 long long			get_time(void);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+void				ft_usleep(long long time_in_ms);
 
 // philo.c
 void				philo(char **argv);
@@ -81,5 +78,17 @@ void				init_philo(t_philo *philo, t_table *table);
 
 // threads.c
 void				create_threads(t_table *table, t_philo philos[]);
+bool 				check_death(t_philo *philo);
+
+// philo_actions.c
+void				take_forks(t_philo *philo);
+void				eat(t_philo *philo);
+void				put_forks(t_philo *philo);
+void				ft_sleep(t_philo *philo);
+void				think(t_philo *philo);
+
+// routines.c
+void				*routine(void *data);
+void				*routine_one(void *data);
 
 #endif

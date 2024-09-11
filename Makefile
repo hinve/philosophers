@@ -12,18 +12,22 @@ SRCS_DIR = src/
 BIN_DIR = bin/
 
 SRCS = $(SRCS_DIR)main.c					\
-		$(SRCS_DIR)write_errors.c			\
+		$(SRCS_DIR)writes.c					\
 		$(SRCS_DIR)utils.c					\
 		$(SRCS_DIR)philo.c					\
 		$(SRCS_DIR)init.c					\
 		$(SRCS_DIR)threads.c				\
+		$(SRCS_DIR)philo_actions.c 			\
+		$(SRCS_DIR)routines.c 				\
 
 OBJS_SRCS = $(OBJ_DIR)main.o				\
-			$(OBJ_DIR)write_errors.o		\
+			$(OBJ_DIR)writes.o				\
 			$(OBJ_DIR)utils.o				\
 			$(OBJ_DIR)philo.o				\
 			$(OBJ_DIR)init.o				\
 			$(OBJ_DIR)threads.o				\
+			$(OBJ_DIR)philo_actions.o		\
+			$(OBJ_DIR)routines.o			\
 
 CFLAGS = -Wall -Werror -Wextra -g -I$(INC_DIR)
 
