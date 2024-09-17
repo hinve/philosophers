@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hpino-mo <hpino-mo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 11:47:29 by hpino-mo          #+#    #+#             */
+/*   Updated: 2024/09/17 11:47:30 by hpino-mo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -23,14 +35,15 @@
 # include <unistd.h>  // write, usleep
 
 // STRUCTS
-typedef struct s_data // ./philo 5 810 200 200 [5] nb_philo, t_to_die, t_to_eat, t_to_sleep, nmb_eat
+typedef struct s_data
 {
-	int nb_philo;
-	int t_to_die;
-	int t_to_eat;
-	int t_to_sleep;
-	int nmb_eat; // if NULL == -1
-	bool end_program;
+	int				nb_philo;
+	int				t_to_die;
+	int				t_to_eat;
+	int				t_to_sleep;
+	int				nmb_eat;
+	bool			end_program;
+	pthread_mutex_t	prove;
 }					t_data;
 typedef struct s_table
 {
@@ -56,7 +69,6 @@ typedef struct s_philo
 	t_table			*table;
 }					t_philo;
 
-
 // PROTOTYPES //
 // writes.c
 void				write_error(char *str);
@@ -78,7 +90,7 @@ void				init_philo(t_philo *philo, t_table *table);
 
 // threads.c
 void				create_threads(t_table *table, t_philo philos[]);
-bool 				check_death(t_philo *philo);
+bool				check_death(t_philo *philo);
 
 // philo_actions.c
 void				take_forks(t_philo *philo);

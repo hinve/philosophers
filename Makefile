@@ -29,15 +29,15 @@ OBJS_SRCS = $(OBJ_DIR)main.o				\
 			$(OBJ_DIR)philo_actions.o		\
 			$(OBJ_DIR)routines.o			\
 
-CFLAGS = -Wall -Werror -Wextra -g -I$(INC_DIR)
+CFLAGS = -Wall -Werror -Wextra -g -I$(INC_DIR) -fsanitize=thread
 
 all: $(NAME)
 
 $(NAME): $(OBJS_SRCS)
 	@mkdir -p $(BIN_DIR)
-	@echo "$(COLOUR_BLUE)Compilando archivos de $(COLOUR_YELLOW)philo$(COLOUR_END)"
+	@echo "$(COLOUR_BLUE)Compiling $(COLOUR_YELLOW)philo$(COLOUR_END)"
 	@gcc $(CFLAGS) $(OBJS_SRCS) -o $(BIN_DIR)$(NAME)
-	@echo "$(COLOUR_GREEN)✅ LISTO ✅$(COLOUR_END)"
+	@echo "$(COLOUR_GREEN)✅ READY ✅$(COLOUR_END)"
 
 $(OBJ_DIR)%.o: $(SRCS_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
@@ -45,11 +45,11 @@ $(OBJ_DIR)%.o: $(SRCS_DIR)%.c
 
 clean:
 	@rm -rf $(OBJS_SRCS) $(OBJ_DIR)
-	@echo "❌ $(COLOUR_RED)Efectuando clean$(COLOUR_END)  ❌"
+	@echo "❌ $(COLOUR_RED)Making clean$(COLOUR_END)  ❌"
 
 fclean:
 	@rm -rf $(NAME) $(OBJS_SRCS) $(OBJ_DIR) $(BIN_DIR)
-	@echo "❌ $(COLOUR_RED)Efectuando fclean$(COLOUR_END) ❌"
+	@echo "❌ $(COLOUR_RED)Making fclean$(COLOUR_END) ❌"
 
 re: fclean all
 
