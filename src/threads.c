@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   threads.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpino-mo <hpino-mo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hinve <hinve@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:45:56 by hpino-mo          #+#    #+#             */
-/*   Updated: 2024/09/17 11:46:39 by hpino-mo         ###   ########.fr       */
+/*   Updated: 2024/09/18 12:40:47 by hinve            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ void	*monitor(void *data)
 				pthread_mutex_unlock(&philos->table->print);
 				return (NULL);
 			}
+            else if(philos->times_eaten == philos->table->data.nmb_eat)
+            {
+                philos->table->data.end_program = true;
+                pthread_mutex_unlock(&philos->table->print);
+                return (NULL);
+            }
 			pthread_mutex_unlock(&philos->table->print);
 			i++;
 		}

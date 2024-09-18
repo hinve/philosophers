@@ -29,7 +29,7 @@ OBJS_SRCS = $(OBJ_DIR)main.o				\
 			$(OBJ_DIR)philo_actions.o		\
 			$(OBJ_DIR)routines.o			\
 
-CFLAGS = -Wall -Werror -Wextra -g -I$(INC_DIR) -fsanitize=thread
+CFLAGS = -Wall -Werror -Wextra -g -I$(INC_DIR) #-fsanitize=thread
 
 all: $(NAME)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpino-mo <hpino-mo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hinve <hinve@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:45:37 by hpino-mo          #+#    #+#             */
-/*   Updated: 2024/09/17 11:46:23 by hpino-mo         ###   ########.fr       */
+/*   Updated: 2024/09/18 12:38:54 by hinve            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	init_philo(t_philo philos[], t_table *table)
 		philos[i].is_eating = false;
 		philos[i].is_sleeping = false;
 		philos[i].is_thinking = false;
-		philos[i].is_full = false;
+		philos[i].is_full = 0;
 		philos[i].times_eaten = 0;
 		philos[i].last_meal_time = 0;
 		philos[i].his_fork = &table->forks[i];

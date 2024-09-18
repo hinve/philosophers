@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hpino-mo <hpino-mo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hinve <hinve@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:47:29 by hpino-mo          #+#    #+#             */
-/*   Updated: 2024/09/17 11:47:30 by hpino-mo         ###   ########.fr       */
+/*   Updated: 2024/09/18 12:44:42 by hinve            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int					valid_arguments(char **argv);
 long long			get_time(void);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				ft_usleep(long long time_in_ms);
+int ft_isdigit(int c);
 
 // philo.c
 void				philo(char **argv);
