@@ -40,3 +40,7 @@
    ```bash
    ./philo <número_de_filósofos> <tiempo_para_morir> <tiempo_para_comer> <tiempo_para_dormir> [número_de_veces_que_cada_filósofo_debe_comer]
    ```
+4. Ejemplo de ejecucion:
+   ```bash
+   ./philo 5 800 200 200 7
+   ```
